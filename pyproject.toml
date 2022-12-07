@@ -1,2 +1,13 @@
+[project]
+name = "logger"
+description = "Simple Logger inspired by the Logger base module of python"
+version = "1.0.2"
+authors = [
+    { name = "Malo Boucé" }
+]
+dependencies = [
+]
+
 [build-system]
-requires = ["setuptools ~= 65.5"]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
