@@ -126,7 +126,7 @@ class Logger:
         Log a message with severity 'DEBUG' on the root logger.
         """
         self._string_level_to_print = "DEBUG: "
-        self._color_ANSI_escape_code = Colors.PURPLE.value
+        self._color_ANSI_escape_code = Colors.YELLOW.value
         self._rootLogger(
             *args,
             level=LoggerLevelEnum.DEBUG.value,
@@ -137,7 +137,7 @@ class Logger:
         Log a message with severity 'WARNING' on the root logger.
         """
         self._string_level_to_print = "WARNING: "
-        self._color_ANSI_escape_code = Colors.YELLOW.value
+        self._color_ANSI_escape_code = Colors.PURPLE.value
         self._rootLogger(
             *args,
             level=LoggerLevelEnum.WARNING.value,
