@@ -16,7 +16,7 @@ extra_requirements = {
 
 setup(
     name="logger",
-    version="1.0.0",
+    version="1.0.5",
     description="Simple Logger inspired by the Logger base module of python",
     long_description=long_description,
     author="Malo Boucé",

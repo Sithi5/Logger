@@ -1,6 +1,6 @@
 from logger.Logger import Logger
 
-logger = Logger(colors=False, display_levels=False)
+logger = Logger(colors=False, display_levels=False, display_date=False)
 
 
 def test_error_level(capsys):

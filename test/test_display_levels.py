@@ -1,6 +1,6 @@
 from logger.Logger import Logger
 
-logger = Logger(colors=False, display_levels=True)
+logger = Logger(colors=False, display_levels=True, display_date=False)
 
 
 def test_display_levels(capsys):

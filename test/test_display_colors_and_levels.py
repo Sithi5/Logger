@@ -1,6 +1,6 @@
 from logger.Logger import Logger
 
-logger = Logger(colors=True, display_levels=True)
+logger = Logger(colors=True, display_levels=True, display_date=False)
 
 
 def test_display_colors_and_levels(capsys):
@@ -10,10 +10,10 @@ def test_display_colors_and_levels(capsys):
     assert captured.out == "INFO: info\x1b[0m\n"
     logger.debug("debug")
     captured = capsys.readouterr()
-    assert captured.out == "\x1b[95mDEBUG: debug\x1b[0m\n"
+    assert captured.out == "\x1b[93mDEBUG: debug\x1b[0m\n"
     logger.warning("warning")
     captured = capsys.readouterr()
-    assert captured.out == "\x1b[93mWARNING: warning\x1b[0m\n"
+    assert captured.out == "\x1b[95mWARNING: warning\x1b[0m\n"
     logger.critical("critical")
     captured = capsys.readouterr()
     assert captured.out == "\x1b[91mCRITICAL: critical\x1b[0m\n"

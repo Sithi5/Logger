@@ -1,5 +1,6 @@
 from enum import IntEnum, auto, Enum
 from typing import Literal
+from datetime import datetime
 
 
 class Colors(Enum):
@@ -52,6 +53,8 @@ class Logger:
         level: LevelType = DefaultType,
         colors: bool = True,
         display_levels: bool = True,
+        display_date: bool = False,
+        date: datetime = datetime.now(),
     ):
         """
         Constructs all the necessary attributes for the Logger object.
@@ -66,11 +69,15 @@ class Logger:
                 "ERROR",
             colors : Set to false if you want to disable the color of prints.
             display_levels : Set to false if you want to disable the display of level severity.
+            display_date : Set to false if you want to disable the display of date.
+            date : Specify the date to display, today by default.
         """
 
         self.level = level
         self._colors = colors
         self._display_levels = display_levels
+        self._display_date = display_date
+        self._date = date
 
     @property
     def level(self):
@@ -104,6 +111,8 @@ class Logger:
                     buff += str(arg)
             if self._display_levels is True:
                 buff = self._addLevelToPrint(buff=buff)
+            if self._display_date is True:
+                buff = "[" + self._date.strftime("%F") + "] " + buff
             if self._colors is True:
                 buff = self._addColorToPrint(
                     buff=buff,
